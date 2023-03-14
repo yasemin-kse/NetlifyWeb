@@ -1,0 +1,469 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+
+:root {
+    --main-color: #e37221;
+    --black-color: #000000;
+    --border: 0.1rem solid rgba(255, 255, 255, 0.4)
+
+}
+
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: 0.2s ease;
+}
+
+/*! base html codes */
+
+html {
+    font-size: 62.5%; /* 1 rem'i 10 piksel olarak ayarladık 
+    fon-size 62.5% olarak yapınca 10px oluyor!!!!*/
+    overflow-x: hidden;
+    scroll-padding-top: 9rem;
+    scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar {
+    width: 0.8rem;
+    background-color: #fff;
+}
+
+html::-webkit-scrollbar-thumb {
+    border-radius: 3rem;
+    background-color: var(--black-color);
+}
+
+body {
+    background-color: var(--main-color);
+    height: 200vh;
+}
+
+section {
+    padding: 3.5rem 7%; /* 35px olacak, sağdan soldan %7'lik bir alan veriyoruz*/
+}
+
+a {
+    color: var(--black-color);
+    text-decoration:  none; /*yazının altında çizgi olamasın */
+}
+
+.btn {
+    margin-top: 1rem;
+    display: inline-block; /*paragrafla butonun arası açıldı*/
+    padding: 2rem 3.75rem;
+    border-radius: 30rem; /*köşeler yuvarlak olucak order butonu*/
+    font-size: 1.7rem;
+    color: #fff;
+    background-color: var(--black-color);
+    /* cursor: pointer;  fareye götürünce imleç çıkıcak (burda gerekli deği)*/
+    cursor: pointer;
+}
+
+.btn:hover {
+    opacity: 0.7;
+}
+
+.heading {
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 5rem;
+    margin-bottom: 3.5rem; /*alt satırdan uzaklaşma boyutu*/
+    border-bottom: 0.3rem solid #fff;
+}
+
+.heading span {
+    text-transform: uppercase;
+    color: var(--black-color);
+}
+
+/*! HEADER START */
+.header .logo img{
+    height: 10rem;
+}
+
+.header {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 7%;
+    margin: 2rem 7%;
+    border-radius: 30rem;
+    box-shadow: 0px 0px 17px -2px rgba(0, 0, 0, 0.75);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header .navbar a {
+    margin: 0 1rem;
+    font-size: 1.6rem;
+    color: var(--black-color);
+    border-bottom: 0.1rem solid transparent;
+}
+
+.header .navbar .active,
+.header .navbar a:hover {
+    border-color: var(--main-color);
+    padding-bottom: 0.5rem;
+}
+
+.header .buttons button {
+    cursor: pointer;
+    font-size: 2.5rem;
+    margin-left: 2rem;
+    background-color: transparent;
+}
+/*! HEADER END */
+
+/*! HOME START */
+
+.home {
+    min-height: 100vh;
+    background: url(../images/home.jpg)
+    no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin-top: -14.5rem;
+    display: flex; /*sol üste sıfır yanaşıyor */
+    align-items: center; /*ortalıyor*/
+    
+}
+
+.home .content {
+    max-width: 60rem;
+} 
+
+.home .content h3 {
+    font-size: 6rem;
+    color: #fff;
+}
+
+.home .content p {
+    font-size: 2rem; /* 2 rem = 20px*/
+    font-weight: 300; /*yazının biraz ince olmasını istiyoruz*/
+    line-height: 1.8; /* satır arası boşluk*/
+    padding: 1rem 0; /* aşağı yukarı 1rem, sağdan soldan 0 */
+    color: #ccc;
+}
+/*! HOME END */
+
+/*! MENU START */
+.menu .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem,1fr)); 
+    gap: 1.5rem; /*15px lik uzaklaşma sağlar*/
+}
+
+.menu .box-container .box {
+    padding: 3rem;
+    background-color: #fff;
+    border-radius: 3rem;
+    background-color: #fff;
+    min-height: 60rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.menu .box-container .box img{
+    width: 100%;
+    object-fit: cover; /*fotoyu ortalıyor*/
+}
+
+.menu .box-container .box .menu-category{
+    font-size: 1.5rem;
+    text-transform: uppercase;
+}
+
+.menu .box-container .box h3 {
+    font-size: 3.5rem;
+    padding: 1rem 0;
+}
+
+.menu .box-container .box .price {
+    font-size: 2.5rem;
+    padding: 0.5rem 0;
+}
+
+.menu .box-container .box .price span{
+    text-decoration: line-through; /*fiyatın üstünün çizili olmasına yarar*/
+    font-size: 1.5rem;
+}
+/*! MENU END */
+
+/*! PRODUCTS START */
+.products .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem,1fr)); 
+    gap: 1.5rem;
+}
+
+.products .box-container .box {
+    text-align: center;
+    background-color: #fff;
+    position: relative;
+    border-radius: 3rem;
+    height: 60rem;
+    display: flex;
+    flex-direction: column; /* alt alta geçirmek için yapılır*/
+    justify-content: space-between;
+    padding: 3rem;
+}
+
+.products .box-container .box .box-head {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    z-index: 10;
+}
+
+.products .box-container .box .box-head .title {
+    font-size: 1.4rem;
+}
+
+.products .box-container .box .box-head .name {
+    font-size: 4rem;
+    font-weight: bold;
+    text-align: start;
+    overflow-wrap: anywhere ;  /*text'in taşmamasını sağlıyoruz*/
+}
+
+.products .box-container .dark-bg .box-head .name,
+.products .box-container .dark-bg .box-head .title {
+    color: #fff;
+}
+
+
+
+.products .box-container img {
+    position: absolute; /*eksenden çıkartıyor*/
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    border-radius: 3rem;
+}
+
+.products .box-container .dark-bg img { /*siyah fotonun tam sığmasını sağlayan kod*/
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: unset;
+}
+
+.products .box-container .box-buttom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+}
+
+.products .box-container .box-buttom .info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.products .box-container .box-buttom .info .price {
+    font-size: 3rem;
+}
+
+.products .box-container .box-buttom .info .amount {
+    font-size: 1.4rem;
+}
+
+.products .box-container .dark-bg .box-buttom .info .price,
+.products .box-container .dark-bg .box-buttom .info .amount {
+    color: #fff;
+}
+
+.products .box-container .box-buttom .product-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: 5rem;
+    height: 5rem;
+    border: 0.2rem solid var(--main-color);
+}
+
+.products .box-container .box-buttom .product-btn a i {
+    font-size: 1.6rem;
+    color: var(--main-color);
+}
+/*! PRODUCTS END */
+
+/*! ABOUT START */
+
+.about .row {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 2rem;
+}
+
+.about .row .image {
+    flex: 1 1 45rem;
+}
+
+.about .row img {
+    width: 100%;
+}
+
+.about .row .content {
+    flex: 1 1 45rem;
+}
+
+.about .row .content h3{
+    font-size: 3.5rem;
+    color: #000000;
+}
+
+.about .row .content p {
+    font-size: 1.7rem;
+    color: #e9dede;
+    padding: 1rem 0;
+    line-height: 1.8;
+}
+/*! ABOUT END */
+
+/*! CUSTOMER'S REVIEW START */
+.review .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem,1fr)); 
+    gap: 1.5rem;
+}
+
+.review .box-container .box {
+    border: var(--border);
+    text-align: center;
+    padding: 3rem 2rem;
+    background-color: #fff;
+    border-radius: 3rem;
+}
+
+.review .box-container .box .p {
+    font-size: 1.5rem;
+    line-height: 1.8;
+    padding: 2rem 0;
+}
+
+/*! CUSTOMER'S REVIEW END */
+
+/*! CONTACT US START*/
+.contact .row {
+    display: flex;
+    background-color: var(--black-color);
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.contact .row .map {
+    flex: 1 1 45rem;
+    width: 100%;
+    object-fit: cover;
+}
+
+.contact .row form {
+    flex: 1 1 45rem;
+    padding: 5rem 2rem;
+    text-align: center;
+}
+
+.contact .row form h3 {
+    text-transform: uppercase;
+    font-size: 3.5rem;
+    color: #fff;
+}
+
+.contact .row form .inputBox {
+    display: flex;
+    align-items: center;
+    margin: 2rem 0; /* yukarı aşağı 2rem, sağdan soldan 0 verdik*/
+    border: var(--border);
+}
+
+.contact .row form .inputBox i {
+    color: #fff;
+    font-size: 2rem;
+    padding-left: 2rem;
+}
+
+.contact .row form .inputBox input {
+    width: 100%;
+    padding: 2rem;
+    font-size: 1.7rem;
+    color: #fff;
+    text-transform: none;
+    background: none;
+}
+
+.contact .row form .btn {
+    color: var(--main-color);
+    background-color: #fff;
+    font-size: bold;
+}
+/*! CONTACT US END */
+
+/*! BLOG START */
+.blogs .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem,1fr)); 
+    gap: 1.5rem;
+}
+
+.blogs .box-container .box {
+    background-color: #fff;
+    border-radius: 3rem;
+}
+
+.blogs .box-container .box .image {
+    height: 25rem;
+    overflow: hidden;
+    width: 100%;
+    border-top-left-radius: 3rem;
+    border-top-right-radius: 3rem;
+
+}
+
+.blogs .box-container .box .image img {
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+}
+
+.blogs .box-container .box:hover .image img {
+    transform: scale(1.2);
+    
+}
+
+.blogs .box-container .box .content {
+    padding: 2rem;
+}
+
+.blogs .box-container .box .content .title {
+    line-height: 1.5;
+    font-size: 2.5rem;
+}
+
+.blogs .box-container .box .content span {
+    display: block;
+    padding-top: 1rem;
+    font-size: 2rem;
+}
+
+.blogs .box-container .box .content p {
+
+}
+/*! BLOG END */
