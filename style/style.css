@@ -82,7 +82,46 @@ a {
     color: var(--black-color);
 }
 
+.search-input {
+    font-size: 1.6rem;
+    color: var(--black-color);
+    padding: 1rem;
+    text-transform: none;
+    border-radius: 3rem;
+}
+
 /*! HEADER START */
+
+.header .search-form {
+    position: absolute;
+    top: 115%;
+    right: 7%;
+    background-color: #fff;
+    width: 50rem;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    border-radius: 3rem;
+    box-shadow: 0px 0px 25px 2px rgb(0 0 0 / 75%);
+    transform: scaleY(0);
+}
+
+.header .search-form.active {
+    transform: scaleY(1);
+}
+
+.header .search-form i {
+    cursor: pointer; /*üzerine gelindiğinde fare imgecini tıklanabilir yapıyor*/
+    font-size: 2.2rem;
+    margin-right: 1.5rem;
+    color: var(--black-color);
+}
+
+.header .search-form input {
+    width: 100%;
+
+}
+
 .header .logo img{
     height: 10rem;
 }
@@ -120,6 +159,54 @@ a {
     margin-left: 2rem;
     background-color: transparent;
 }
+.header .cart-items-container {
+    position: absolute;
+    top: 95%;
+    height: calc(100vh - 9rem);
+    width: 35rem;
+    background-color: #fff;
+    box-shadow: 0px 20px 14px 0px rgb(0 0 0 / 75%);
+}
+
+.header .cart-items-container .cart-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem;
+}
+
+.header .cart-items-container .cart-item:hover {
+    box-shadow: 0px 0px 10px 0px rgb(0 0 0 / 75%);
+}
+
+.header .cart-items-container .cart-items .fa-items{
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--black-color);
+}
+
+.header .cart-items-container .cart-item img {
+    height: 7rem;
+}
+
+.header .cart-items-container .cart-item .content h3 {
+    font-size: 2.5rem;
+    color: var(--black-color);
+    padding-bottom: 0.5rem;
+}
+
+.header .cart-items-container .cart-item .content .price {
+    font-size: 2rem;
+}
+
+.header #menu-btn {  /* id="" olunca '#' verilir. class olunca '.' verrilir*/
+    display: none;
+}
+
 /*! HEADER END */
 
 /*! HOME START */
@@ -463,7 +550,126 @@ a {
     font-size: 2rem;
 }
 
-.blogs .box-container .box .content p {
-
-}
 /*! BLOG END */
+
+/*! FOOTER START */
+.footer {
+    background-color: var(--black-color);
+    text-align: center;
+}
+
+.footer .search {
+    display: flex;
+    justify-content: center;
+}
+
+.footer .search .search-input {
+    width: 30rem;
+}
+
+.footer .search .btn {
+    background-color: var(--main-color);
+    padding: 1rem 1rem;
+    margin: 0;
+    margin-left: 1rem;
+}
+
+.footer .share {
+    padding: 2rem 0;
+}
+
+.footer .share a {
+    width: 5rem;
+    height: 5rem;
+    line-height: 5rem;
+    color: #fff;
+    font-size: 2.5rem;
+    border: var(--border);
+    border-radius: 50%;
+    margin: 0.3rem;
+}
+
+.footer .share a:hover {
+    background-color: var(--main-color);
+}
+
+.footer .links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem; /*aralarındaki boşluk belirlenir*/
+}
+
+.footer .links a {
+    background-color: var(--main-color);
+    padding: 0.7rem 2rem;
+    color: #fff;
+    font-size: 2rem;
+    border: var(--border);
+}
+
+.footer .links a:hover {
+    background-color: transparent; /*siyahta aynı etkiyi yaratıcak*/
+    opacity: 0.7 ;
+}
+
+.footer .links a.active {
+    background-color: var(--black-color);
+}
+
+.footer .credit {
+    font-size: 2rem;
+    color: #fff;
+    font-weight: 300;
+    padding-top: 1.5rem ;
+}
+
+.footer .credit span {
+    color: var(--main-color);
+}
+/*! FOOTER END */
+
+/*! RESPONSIVE START */
+@media (max-width: 991px) {
+    html {
+        font-size: 55%;
+    }
+    .header {
+        padding: 1.5rem 2rem;
+    }
+    .header .logo img {
+        height: 7rem;
+    }
+    .section {
+        padding: 2rem;
+    }
+    .products .box-container .box .box-head .name {
+        font-size: 3.4rem;
+    }
+}
+
+@media (max-width: 768px) {
+    #menu-btn {
+        display: inline;
+    }
+    .header .navbar {
+        position: absolute;
+        top: 95%;
+        background-color: #fff;
+        height: calc(100vh - 9rem);
+        width: 30rem;
+        box-shadow: 0px 20px 14px 0px rgb(0 0 0 / 75%);
+        right: -100%;
+    }
+    .header .navbar.active {
+        right: 3rem;
+    }
+    .header .navbar a {
+        color: var(--black-color);
+        display: block; /* alt alta sıralanır*/
+        margin: 1.5rem;
+        padding: 0.5rem;
+        font-size: 2rem;
+    }
+}
+/*! RESPONSIVE END */
